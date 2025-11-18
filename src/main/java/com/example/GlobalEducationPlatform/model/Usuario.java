@@ -1,5 +1,6 @@
 package com.example.GlobalEducationPlatform.model;
 
+import com.example.GlobalEducationPlatform.dto.usuario.UsuarioRequestDTO;
 import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDate;
@@ -30,4 +31,12 @@ public class Usuario {
 
     @Column(nullable = false)
     private LocalDate dataCadastro;
+
+    public Usuario(UsuarioRequestDTO dto) {
+        this.nome = dto.nome();
+        this.email = dto.email();
+        this.areaAtuacao = dto.areaAtuacao();
+        this.nivelCarreira = dto.nivelCarreira();
+        this.dataCadastro = dto.dataCadastro();
+    }
 }

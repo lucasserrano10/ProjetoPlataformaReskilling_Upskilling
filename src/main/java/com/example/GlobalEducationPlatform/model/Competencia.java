@@ -1,5 +1,6 @@
 package com.example.GlobalEducationPlatform.model;
 
+import com.example.GlobalEducationPlatform.dto.competencia.CompetenciaRequestDTO;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -23,4 +24,11 @@ public class Competencia {
 
     @Column(columnDefinition = "TEXT")
     private String descricao;
+
+    public Competencia(CompetenciaRequestDTO dto) {
+        this.nome = dto.nome();
+        this.categoria = dto.categoria();
+        this.descricao = dto.descricao();
+    }
+
 }

@@ -1,5 +1,6 @@
 package com.example.GlobalEducationPlatform.model;
 
+import com.example.GlobalEducationPlatform.dto.trilha.TrilhaRequestDTO;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -29,4 +30,13 @@ public class Trilha {
 
     @Column(length = 100)
     private String focoPrincipal;
+
+    public Trilha(TrilhaRequestDTO dto) {
+        this.nome = dto.nome();
+        this.descricao = dto.descricao();
+        this.nivel = dto.nivel();
+        this.cargaHoraria = dto.cargaHoraria();
+        this.focoPrincipal = dto.focoPrincipal();
+    }
+
 }
