@@ -30,3 +30,42 @@ Antes de rodar o projeto, instale:
 - **Maven**
 - **MySQL** (ou **H2**, se configurado)
 
+## 🛠️ Instalação e Execução
+
+### 1️⃣ Instalar Dependências
+
+```bash
+mvn clean install
+
+## Exemplos de Requisição
+
+POST /usuarios
+
+{
+  "nome": "Lucas Serrano",
+  "email": "lucas@example.com",
+  "areaAtuacao": "Tecnologia",
+  "nivelCarreira": "Estagiário",
+  "dataCadastro": "2025-01-01"
+}
+
+POST /trilhas
+
+{
+  "nome": "Java Backend",
+  "descricao": "Trilha completa focada em desenvolvimento backend",
+  "nivel": "Intermediário",
+  "cargaHoraria": 40,
+  "focoPrincipal": "Java + Spring"
+}
+
+
+## URL PARA TESTES
+
+http://localhost:8080/usuarios
+
+http://localhost:8080/trilhas
+
+http://localhost:8080/competencias
+
+
