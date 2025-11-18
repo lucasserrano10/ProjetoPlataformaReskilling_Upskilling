@@ -3,6 +3,7 @@ package com.example.GlobalEducationPlatform.controller;
 import com.example.GlobalEducationPlatform.dto.trilha.TrilhaRequestDTO;
 import com.example.GlobalEducationPlatform.dto.trilha.TrilhaResponseDTO;
 import com.example.GlobalEducationPlatform.service.TrilhaService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +21,7 @@ public class TrilhaController {
     }
 
     @PostMapping
-    public ResponseEntity<TrilhaResponseDTO> criar(@RequestBody TrilhaRequestDTO dto) {
+    public ResponseEntity<TrilhaResponseDTO> criar(@Valid @RequestBody TrilhaRequestDTO dto) {
         var resposta = service.criar(dto);
         return ResponseEntity.status(HttpStatus.CREATED).body(resposta);
     }
@@ -36,7 +37,7 @@ public class TrilhaController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<TrilhaResponseDTO> atualizar(@PathVariable Long id, @RequestBody TrilhaRequestDTO dto) {
+    public ResponseEntity<TrilhaResponseDTO> atualizar(@PathVariable Long id,@Valid @RequestBody TrilhaRequestDTO dto) {
         return ResponseEntity.ok(service.atualizar(id, dto));
     }
 

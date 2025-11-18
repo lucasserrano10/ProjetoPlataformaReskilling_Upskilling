@@ -3,6 +3,7 @@ package com.example.GlobalEducationPlatform.controller;
 import com.example.GlobalEducationPlatform.dto.usuario.UsuarioRequestDTO;
 import com.example.GlobalEducationPlatform.dto.usuario.UsuarioResponseDTO;
 import com.example.GlobalEducationPlatform.service.UsuarioService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +21,7 @@ public class UsuarioController {
     }
 
     @PostMapping
-    public ResponseEntity<UsuarioResponseDTO> criar(@RequestBody UsuarioRequestDTO dto) {
+    public ResponseEntity<UsuarioResponseDTO> criar(@Valid @RequestBody UsuarioRequestDTO dto) {
         var resposta = service.criar(dto);
         return ResponseEntity.status(HttpStatus.CREATED).body(resposta);
     }
@@ -36,7 +37,7 @@ public class UsuarioController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<UsuarioResponseDTO> atualizar(@PathVariable Long id, @RequestBody UsuarioRequestDTO dto) {
+    public ResponseEntity<UsuarioResponseDTO> atualizar(@PathVariable Long id,@Valid @RequestBody UsuarioRequestDTO dto) {
         return ResponseEntity.ok(service.atualizar(id, dto));
     }
 

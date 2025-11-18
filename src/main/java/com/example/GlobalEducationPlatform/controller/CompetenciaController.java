@@ -3,6 +3,7 @@ package com.example.GlobalEducationPlatform.controller;
 import com.example.GlobalEducationPlatform.dto.competencia.CompetenciaRequestDTO;
 import com.example.GlobalEducationPlatform.dto.competencia.CompetenciaResponseDTO;
 import com.example.GlobalEducationPlatform.service.CompetenciaService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +21,7 @@ public class CompetenciaController {
     }
 
     @PostMapping
-    public ResponseEntity<CompetenciaResponseDTO> criar(@RequestBody CompetenciaRequestDTO dto) {
+    public ResponseEntity<CompetenciaResponseDTO> criar(@Valid @RequestBody CompetenciaRequestDTO dto) {
         var resposta = service.criar(dto);
         return ResponseEntity.status(HttpStatus.CREATED).body(resposta);
     }
@@ -36,7 +37,7 @@ public class CompetenciaController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<CompetenciaResponseDTO> atualizar(@PathVariable Long id, @RequestBody CompetenciaRequestDTO dto) {
+    public ResponseEntity<CompetenciaResponseDTO> atualizar(@PathVariable Long id,@Valid @RequestBody CompetenciaRequestDTO dto) {
         return ResponseEntity.ok(service.atualizar(id, dto));
     }
 

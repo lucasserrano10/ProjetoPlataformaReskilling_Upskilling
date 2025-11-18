@@ -39,4 +39,54 @@ public class Trilha {
         this.focoPrincipal = dto.focoPrincipal();
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public String getNivel() {
+        return nivel;
+    }
+
+    public Integer getCargaHoraria() {
+        return cargaHoraria;
+    }
+
+    public String getFocoPrincipal() {
+        return focoPrincipal;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public void setNivel(String nivel) {
+        this.nivel = nivel;
+    }
+
+    public void setCargaHoraria(Integer cargaHoraria) {
+        this.cargaHoraria = cargaHoraria;
+    }
+
+    public void setFocoPrincipal(String focoPrincipal) {
+        this.focoPrincipal = focoPrincipal;
+    }
+
+    public Trilha() {
+    }
 }
