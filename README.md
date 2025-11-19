@@ -28,7 +28,7 @@ Antes de rodar o projeto, instale:
 
 - **Java 17+**
 - **Maven**
-- **MySQL** (ou **H2**, se configurado)
+- **MySQL** 
 
 ---
 
