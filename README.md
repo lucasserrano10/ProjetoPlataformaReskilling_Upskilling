@@ -59,3 +59,7 @@ POST /trilhas
   "cargaHoraria": 40,
   "focoPrincipal": "Java + Spring"
 }
+
+http://localhost:8080/usuarios
+http://localhost:8080/trilhas
+http://localhost:8080/competencias
